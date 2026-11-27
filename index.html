@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b2b">
+  <title>Siklus Air 3D — Simulasi Alam</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main id="app">
+    <div id="scene" aria-label="Simulasi 3D siklus air"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">💧</span>
+        <div>
+          <h1>SIKLUS AIR <span>3D</span></h1>
+          <p>SIMULASI ALAM INTERAKTIF</p>
+        </div>
+      </div>
+      <div class="live-pill"><span></span> SIMULASI AKTIF</div>
+    </header>
+
+    <section class="intro panel">
+      <p class="eyebrow">PERJALANAN SETETES AIR</p>
+      <h2>Dari laut, menuju awan,<br>kembali menjadi hujan.</h2>
+      <p class="intro-copy">Amati bagaimana air terus bergerak melalui alam dalam sebuah siklus yang tidak pernah berhenti.</p>
+    </section>
+
+    <section class="stage-panel panel">
+      <div class="stage-top">
+        <div>
+          <p class="eyebrow">TAHAP SIKLUS AIR</p>
+          <h2 id="stageTitle">1. Evaporasi</h2>
+        </div>
+        <span id="stageNumber" class="stage-count">01 / 06</span>
+      </div>
+      <p id="stageDescription">Panas matahari mengubah air di laut dan permukaan bumi menjadi uap air yang naik ke atmosfer.</p>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <div class="stage-actions">
+        <button id="prevStage" class="control secondary" aria-label="Tahap sebelumnya">←</button>
+        <button id="playButton" class="control primary">Ⅱ Jeda</button>
+        <button id="nextStage" class="control secondary" aria-label="Tahap berikutnya">→</button>
+      </div>
+    </section>
+
+    <section class="sound-panel panel">
+      <div class="sound-heading">
+        <div>
+          <p class="eyebrow">AUDIO LINGKUNGAN</p>
+          <strong id="soundLabel">Suara alam: mati</strong>
+        </div>
+        <button id="soundButton" class="sound-toggle" aria-pressed="false">🔇 Aktifkan suara</button>
+      </div>
+      <label class="volume-label" for="volumeControl">Volume <span id="volumeValue">35%</span></label>
+      <input id="volumeControl" type="range" min="0" max="100" value="35">
+      <p class="sound-note">Suara dibuat secara sintetis di browser. Klik “Aktifkan suara” untuk memulai audio.</p>
+    </section>
+
+    <footer class="footer">
+      <span>Gunakan mouse untuk memutar sudut pandang • Scroll untuk zoom</span>
+      <button id="resetButton" class="reset-button">↻ Reset simulasi</button>
+    </footer>
+    <div id="loading" class="loading">MENYIAPKAN ALAM 3D...</div>
+    <div id="errorMessage" class="error-message" hidden></div>
+  </main>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
